@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Express Entry Form</h1>
+
+<form method = "POST" action= "{% url 'thankyou' %}">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name = "name" id="examplename">
+  </div>
+  <div class="form-group">
+    <label for="oname">Any other name used and type of name (name before marriage, nickname, former name, birth name)</label>
+    <input type="text" class="form-control" name = "oname">
+  </div>
+  <div class="form-group">
+    <label for="pass">Passport Details</label>
+    <input type="text" class="form-control" name = "passport">
+  </div>
+  <div class="form-group">
+    <label for="marital">Marital Status</label>
+    <input type="text" class="form-control" name = "marital">
+  </div>
+  <div class="form-group">
+    <label for="dom">Date entered into that realtionship?</label>
+    <input type="date" class="form-control" name = "dom" id="Date">
+  </div>
+  <div class="form-group">
+    <label for="height">Height</label>
+    <input type="text" class="form-control" name = "height" id="height">
+  </div>
+  <div class="form-group">
+    <label for="eyecolor">Eye Color</label>
+    <input type="text" class="form-control" name = "eyecolor" id="EyeColor">
+  </div>
+  <div class="form-check">
+  <label for="citizenship">Have you applied to Immigration, Refugee and Citizenship Canada before?</label><br/>
+  <input class="form-check-input" type="radio" name="citizen" id="citizenRadios1" value="option1">
+  <label class="form-check-label" for="citizenRadios1">
+    Yes
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="citizen" id="citizenRadios2" value="option2">
+  <label class="form-check-label" for="citizenRadios2">
+    No
+  </label>
+</div>
+<div class="form-group">
+  <label for="members">How many family members do you have?</label>
+  <input type="text" class="form-control" name = "member" id="members">
+</div>
+<div class="form-group">
+  <label for="Funds">How many funds do you have to show?</label>
+  <input type="text" class="form-control" name = "funds" id="Funds">
+</div>
+<div class="form-check">
+<label for="relative">Do you have any relative in Canada who is a PR or Citizen?</label><br/>
+<input class="form-check-input" type="radio" name="relative" id="relativeRadios1" value="relativeoption1">
+<label class="form-check-label" for="realtiveRadios1">
+  Yes
+</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="relative" id="relativeRadios2" value="relativeoption2">
+<label class="form-check-label" for="relativeRadios2">
+  No
+</label>
+</div>
+<div class="form-group">
+  <label for="relation">If yes, What is your relation with him/her?</label>
+  <input type="text" class="form-control" name = "relation" id="relation">
+</div>
+<div class="form-group">
+  <label for="language">Native Language</label>
+  <input type="text" class="form-control" name = "language" id="language">
+</div>
+<div class="form-check">
+<label for="ielts">Have you appeard for IELTS?</label><br/>
+<input class="form-check-input" type="radio" name="ielts" id="ieltsRadios1" value="ieltsoption1">
+<label class="form-check-label" for="ieltsRadios1">
+  Yes
+</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="ielts" id="ieltsRadios2" value="ieltsoption2">
+<label class="form-check-label" for="relativeRadios2">
+  No
+</label>
+</div>
+<div class="form-group">
+  <label for="ieltsscore">If yes, provide your result?</label>
+  <input type="text" class="form-control" name = "ieltsscore" id="ieltsscore">
+</div>
+<div class="form-check">
+<label for="nomination">Have you received nomination from any province?</label><br/>
+<input class="form-check-input" type="radio" name="nomination" id="nominationRadios1" value="nominationoption1">
+<label class="form-check-label" for="nominationRadios1">
+  Yes
+</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="nomination" id="nominationRadios2" value="nominationoption2">
+<label class="form-check-label" for="nominationRadios2">
+  No
+</label>
+</div>
+<div class="form-group">
+  <label for="noc">What is your NOC?</label>
+  <input type="text" class="form-control"name = "noc" id="noc">
+</div>
+<div class="form-group">
+  <label for="nocdate">When did you first became qualified to practice in this profession?</label>
+  <input type="date" class="form-control" name = "nocdate" id="nocdate">
+</div>
+<div class="form-check">
+<label for="job">Do you have job offer in Canada?</label><br/>
+<input class="form-check-input" type="radio" name="job" id="jobRadios1" value="joboption1">
+<label class="form-check-label" for="jobRadios1">
+  Yes
+</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="jobn" id="jobRadios2" value="joboption2">
+<label class="form-check-label" for="jobRadios2">
+  No
+</label>
+</div>
+<br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
